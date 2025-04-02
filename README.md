@@ -1,29 +1,63 @@
 # WhatsAutoMSG
 
-A Node.js application that uses UltraMSG API to send WhatsApp messages with text, video, and location.
+An Express.js application that leverages UltraMSG API to send WhatsApp messages with text, video, and location information.
 
-## Setup
+![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
-1. Install dependencies:
+## Features
+
+- Send text messages via WhatsApp
+- Send video content (including YouTube links)
+- Share location information
+- API rate limiting for security
+- Environment-based configuration
+- Easy to integrate with other applications
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- WhatsApp account connected to UltraMSG
+- UltraMSG account credentials (Instance ID and API Token)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/WhatsAutoMSG.git
+   cd WhatsAutoMSG
    ```
+
+2. Install dependencies:
+   ```bash
    npm install
    ```
 
-2. Create a `.env` file with your UltraMSG credentials:
+3. Create a `.env` file with your UltraMSG credentials:
    ```
    ULTRAMSG_INSTANCE_ID=your_instance_id
    ULTRAMSG_API_TOKEN=your_api_token
    PORT=3000
    ```
 
-3. Start the server:
-   ```
-   node index.js
-   ```
+## Usage
 
-## API Endpoints
+### Start the Server
 
-### Send WhatsApp Message with Text, Video, and Location
+Development mode:
+```bash
+npm run dev
+```
+
+Production mode:
+```bash
+npm start
+```
+
+### API Endpoints
+
+#### Send WhatsApp Message with Text, Video, and Location
 
 **Endpoint:** `POST /api/send-whatsapp`
 
@@ -47,10 +81,39 @@ A Node.js application that uses UltraMSG API to send WhatsApp messages with text
 }
 ```
 
+## Postman Integration
+
+This project includes Postman collection and environment files for easy API testing:
+
+1. Import `WhatsAutoMSG.postman_collection.json` and `WhatsAutoMSG.postman_environment.json` into Postman
+2. Configure environment variables (baseUrl, instanceId, apiToken)
+3. Use the pre-configured requests to test the API
+
+For detailed instructions, see [POSTMAN_GUIDE.md](POSTMAN_GUIDE.md).
+
 ## Error Handling
 
-- 400 Bad Request: Missing required parameters
-- 500 Internal Server Error: Failed to send WhatsApp message
+- 400 Bad Request: Missing or invalid parameters
+- 429 Too Many Requests: Rate limit exceeded
+- 500 Internal Server Error: Server-side issues
+
+## Security Features
+
+- Rate limiting to prevent abuse
+- Environment variable-based secrets
+- Input validation
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the ISC License - see the package.json file for details.
 
 ## Note
 
