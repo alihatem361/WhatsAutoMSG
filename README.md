@@ -25,7 +25,7 @@ An Express.js application that leverages UltraMSG API to send WhatsApp messages 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/WhatsAutoMSG.git
+   git clone https://github.com/alihatem361/WhatsAutoMSG.git
    cd WhatsAutoMSG
    ```
 
