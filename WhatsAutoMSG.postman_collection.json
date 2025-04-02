@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "WhatsAutoMSG API",
+    "description": "Collection for WhatsAutoMSG API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12345678"
+  },
+  "item": [
+    {
+      "name": "Send WhatsApp Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"phone\": \"1234567890\",\n    \"message\": \"Hello, this is a test message\",\n    \"videoUrl\": \"https://example.com/video.mp4\",\n    \"latitude\": 30.0444,\n    \"longitude\": 31.2357,\n    \"address\": \"Cairo, Egypt\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/send-whatsapp",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "send-whatsapp"]
+        },
+        "description": "Send a WhatsApp message with optional text, video, and location"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
